@@ -59,8 +59,7 @@ def main():
 
     while gameloop == True:
         #draw new word before initiating game:
-        word = wordlist[random.randint(0,100)].rstrip("\n") #weirdly, randint(a,b) produces a range inclusive of b
-        #Note to self: when updating for use with multiple word lists, change randint args to dynamically adjust to the list length.
+        word = random.choice(wordlist).rstrip("\n") #no longer length-dependent!!
         unspacedword = word.replace(" ", "") #removes spaces between two words for use in anything that requires a total letter count (mainly wordfill())
         wordboard = wordblank(word)
 
